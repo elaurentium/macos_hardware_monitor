@@ -1,9 +1,0 @@
-/Users/elaurentium/Documents/macos_hardware_monitor/monitor/target/debug/deps/libanstyle_parse-9f838048d85c602c.rmeta: /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/lib.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/params.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/mod.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/definitions.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/table.rs
-
-/Users/elaurentium/Documents/macos_hardware_monitor/monitor/target/debug/deps/anstyle_parse-9f838048d85c602c.d: /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/lib.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/params.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/mod.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/definitions.rs /Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/table.rs
-
-/Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/lib.rs:
-/Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/params.rs:
-/Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/mod.rs:
-/Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/definitions.rs:
-/Users/elaurentium/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anstyle-parse-0.2.6/src/state/table.rs:
