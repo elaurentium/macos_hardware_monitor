@@ -1,0 +1,7 @@
+comp:
+	cd src
+	cargo run
+
+build:
+	cd src
+	cargo build
