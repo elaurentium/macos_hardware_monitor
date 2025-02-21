@@ -1,28 +1,40 @@
-mod hardware;
+use std::{os::{macos::raw::stat, unix::thread}, sync::mpsc::{channel, Sender}};
+use std::thread::sleep;
 
-use std::thread;
-use std::time::Duration;
+use config::Config;
+use env_logger;
+use sysinfo::SystemExt;
+mod hardware;
+mod config;
+
 
 fn main() {
-    println!("Monitor de Hardware em Tempo Real para macOS");
-    println!("Pressione Ctrl+C para sair");
+    env_logger::init();
 
-    // Loop principal para atualização em tempo real
+    let config = match Config::load("config.toml") {
+        Ok(config) => config,
+        Err(e) => {
+            log::error!("Failed to load config: {}", e);
+            return;
+        }
+    };
+
+    let (tx, rx) = channel();
+
+    spawn_monitor(tx, &config.clone());
+}
+
+fn spawn_monitor(tx: Sender<hardware::HardwareStats>, config: &Config) {
+    let mut sys = sysinfo::System::new_all();
     loop {
-        // Limpa a tela (simulação de atualização)
-        print!("\x1B[2J\x1B[1;1H");
+        sys.refresh_all();
+        let stats = hardware::get_hardware_stats(&mut sys, config);
+        println!("{:?}", stats);
 
-        // Coleta de informações do sistema
-        let cpu_usage = hardware::get_cpu_usage();
-        let memory_usage = hardware::get_memory_usage();
-
-        // Exibe as informações
-        println!("Uso de CPU: {}%", cpu_usage.unwrap_or("Erro".to_string()));
-        println!(
-            "Uso de Memória: {} MB",
-            memory_usage.unwrap_or("Erro".to_string())
-        );
-        // Atualiza a cada 2 segundos
-        thread::sleep(Duration::from_secs(2));
+        if let Err(e) = tx.send(stats) {
+            log::error!("Failed to send stats: {}", e);
+            break;
+        }
+        sleep(std::time::Duration::from_secs(config.settings.update_interval_secs));
     }
 }

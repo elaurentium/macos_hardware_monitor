@@ -1,0 +1,5 @@
+[settings]
+update_interval_secs = 2
+show_cpu = true
+show_memory = true
+show_disk = true
