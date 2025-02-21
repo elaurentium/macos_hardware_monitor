@@ -8,8 +8,8 @@ use crate::config::Config;
 
 #[no_mangle]
 pub extern "C" fn get_hardware_stats_json() -> *mut c_char {
-    let mut sys = System::new_all(); // Cria um novo System
-    let config = Config::default();  // Usa uma configuração padrão
+    let mut sys = System::new_all();
+    let config = Config::default();
     let stats = hardware::get_hardware_stats(&mut sys, &config);
     let json = serde_json::to_string(&stats).unwrap_or_else(|_| "{}".to_string());
     let c_string = CString::new(json).unwrap_or_else(|_| CString::new("{}").unwrap());

@@ -1,7 +1,12 @@
-comp:
-	cd src
-	cargo run
+.PHONY: all build run clean
+
+all: build run
 
 build:
-	cd src
-	cargo build
+	cargo build --manifest-path src/Cargo.toml
+
+run:
+	cargo run --manifest-path src/Cargo.toml
+
+clean:
+	cargo clean --manifest-path src/Cargo.toml
