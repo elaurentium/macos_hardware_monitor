@@ -1,0 +1,1 @@
+/Users/elaurentium/Documents/macos_hardware_monitor/monitor/target/debug/macos_hardware_monitor: /Users/elaurentium/Documents/macos_hardware_monitor/monitor/src/hardware.rs /Users/elaurentium/Documents/macos_hardware_monitor/monitor/src/main.rs
