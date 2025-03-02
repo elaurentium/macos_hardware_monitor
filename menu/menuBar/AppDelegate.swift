@@ -1,5 +1,5 @@
 import Cocoa
-import RustBridge
+//import RustBridge
 
 struct HardwareInfo: Codable {
     let cpuUsage: UInt32
@@ -21,7 +21,7 @@ struct HardwareInfo: Codable {
     }
 }
 
-func updateUI(with jsonString: String) {
-    //TODO
-    }
-}
+// func updateUI(with jsonString: String) {
+//     //TODO
+//     }
+// }
