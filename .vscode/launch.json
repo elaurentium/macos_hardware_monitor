@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:macos_hardware_monitor}/menu",
+            "name": "Debug menu (menu)",
+            "program": "${workspaceFolder:macos_hardware_monitor}/menu/.build/debug/menu",
+            "preLaunchTask": "swift: Build Debug menu (menu)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:macos_hardware_monitor}/menu",
+            "name": "Release menu (menu)",
+            "program": "${workspaceFolder:macos_hardware_monitor}/menu/.build/release/menu",
+            "preLaunchTask": "swift: Build Release menu (menu)"
+        }
+    ]
+}
