@@ -1,30 +1,27 @@
 import Cocoa
+import RustBridge
 
-@NSApplicationMain
-@objc class AppDelegate: NSObject, NSApplicationDelegate {
-    var statusItem: NSStatusItem!
-
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        
-        if let button = statusItem.button {
-            button.title = "Carregando..."
-            
-            // Chama a função Rust em uma thread separada para não bloquear
-            DispatchQueue.global().async {
-                let data = self.getRustData()
-                DispatchQueue.main.async {
-                    button.title = data
-                }
-            }
-        }
+struct HardwareInfo: Codable {
+    let cpuUsage: UInt32
+    let memoryUsed: Float
+    let memoryTotal: Float
+    let networkIn: Float
+    let networkOut: Float
+    let diskUsed: Double
+    let diskTotal: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case cpuUsage = "cpu_usage"
+        case memoryUsed = "memory_used"
+        case memoryTotal = "memory_total"
+        case networkIn = "network_in"
+        case networkOut = "network_out"
+        case diskUsed = "disk_used"
+        case diskTotal = "disk_total"
     }
+}
 
-    func getRustData() -> String {
-        let cString = get_hardware_stats_json();
-        let swiftString = String(cString: cString);
-        free_hardware_stats_json(cString);
-        return swiftString;
+func updateUI(with jsonString: String) {
+    //TODO
     }
-
 }

@@ -15,6 +15,7 @@ pub struct HardwareStats {
     pub disk_total: f64,
 }
 
+#[derive(PartialEq)]
 enum DiskUnit {
     GB(f64),
     MB(f64),
