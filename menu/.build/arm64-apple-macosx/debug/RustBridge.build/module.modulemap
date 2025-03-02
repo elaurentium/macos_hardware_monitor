@@ -1,4 +1,0 @@
-module RustBridge {
-    umbrella header "/Users/elaurentium/Documents/macos_hardware_monitor/menu/menuBar/include/RustBridge.h"
-    export *
-}
